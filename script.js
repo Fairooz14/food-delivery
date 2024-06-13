@@ -1,32 +1,34 @@
-// let currentSlide = 0;
+let currentIndex = 0;
 
-// function showSlide(index) {
-//     const carousel = document.querySelector('.carousel');
-//     const totalSlides = document.querySelectorAll('.carousel-item').length;
+function showSlide(index) {
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
     
-//     if (index >= totalSlides) {
-//         currentSlide = 0;
-//     } else if (index < 0) {
-//         currentSlide = totalSlides - 1;
-//     } else {
-//         currentSlide = index;
-//     }
-    
-//     const offset = -currentSlide * 100;
-//     carousel.style.transform = `translateX(${offset}%)`;
-// }
+    // Ensure index is within the bounds
+    if (index >= totalSlides) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalSlides - 1;
+    } else {
+        currentIndex = index;
+    }
 
-// function nextSlide() {
-//     showSlide(currentSlide + 1);
-// }
+    // Update the transform property to show the current slide
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    const offset = -currentIndex * 100;
+    carouselWrapper.style.transform = `translateX(${offset}%)`;
+}
 
-// function prevSlide() {
-//     showSlide(currentSlide - 1);
-// }
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     showSlide(currentSlide);
-// });
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+// Initialize the first slide
+showSlide(currentIndex);
 
 // Additional Products------------------>
 

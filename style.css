@@ -455,6 +455,7 @@
 .carousel-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    gap: 500px;
 
 }
 
@@ -508,8 +509,9 @@ blockquote {
 }
 
 .carousel-image {
-    max-width: 40%;
+    max-width: 60%;
     border-radius: 10px;
+    padding-left: 50px;
 }
 
 .carousel-button {
@@ -534,7 +536,7 @@ blockquote {
 }
 
 .carousel-button.right {
-    right: 480px;
+    right: 10px;
 }
 
 /* Newsletter -------------------------------------> */
